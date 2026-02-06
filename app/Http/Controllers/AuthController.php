@@ -59,4 +59,11 @@ class AuthController extends BaseController
             return $this->sendError($e->getMessage());
         }
     }
+
+    /**
+     * Login user
+     */
+    public function login() {
+        echo "Login";
+    }
 }
