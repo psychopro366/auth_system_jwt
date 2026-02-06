@@ -63,7 +63,12 @@ class AuthController extends BaseController
     /**
      * Login user
      */
-    public function login() {
-        echo "Login";
+    public function login(LoginRequest $request) {
+        try {
+            $data = $request->safe()->only('email', 'password');
+            return $this>sendResponse($data, 'Logging Successfully.');
+        } catch (Exception $e) {
+            
+        }
     }
 }
